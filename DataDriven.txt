@@ -1,0 +1,174 @@
+Workbook--Interface
+=========
+
+ref.getSheet()--------> to read the sheet--->String(Sheet name)-------->Sheet(Interface)
+
+ref.createSheet()----->to create a sheet in workbook------>String(sheet name)-------->Sheet(Interface)
+
+ref.write()---> to write the workbook------->FileoutStream ref
+
+Sheet--Interface
+=====
+
+ref.getRow()-------->to read or get the Row from the sheet------>Integer(index)---------->Row(Interface)
+
+ref.getPhysicalNumberOfRows()---------> to find the number of Rows filled with data------------>Integer
+
+ref.createRow()------------>to create a row  in the sheet----------->int(row index)------>Row(Interface)
+
+
+Row--Interface
+===============
+
+ref.getCell()------->to read or get the cell from the Row ------->Integer(index)------->Cell(Interface)
+
+ref.getPhysicalNumberOfCells()----------->to find the number of Cells present in each row filled with data----------->Integer
+
+ref.createCell()-------->to create a cell in the row------------>int(cell index)-------->Cell(Interface)
+
+
+Cell-Interface
+===============
+ref.getStringCellValue()------------->to read the string values from the cell------>String
+
+ref.getCelltype()---------> this method will tell whether a numerical data or String data is filled in the cell------->Integer
+
+			this method output is Integer---(0 or 1)
+
+			When getCellType == 1----String data is filled in the cell
+
+			When getCellType == 0 ----Numerical data is filled in the cell
+
+
+
+ref.getNumericCellValue()-------> this method will read or get the numeric value present in the cell------------>double
+
+				Type Casting (Convert Double data into Long data)
+
+				Syntax : "long ref = (long) doubleref;"
+
+ref.getDateCellValue()----> to get the date from the cell
+
+
+ref.setCellValue()----->to set value for the cell----> String(cell value)
+
+
+
+
+how to read the date
+=====================
+
+DateUtil-------Class---------isCellDateFormatted()-Static Method------->It will check the value present in the cell is according to the date format or not
+
+
+		------> If it is date format
+
+		-----> Cell--Interface
+
+		ref.getDateCellValue()-------> Date(Return type)----->It will give month , date and year along with it it give time
+
+							
+
+
+
+To change the format of the date
+==================================
+
+		SimpleDateFormat-----> class
+
+		format -----------> method--------> It will change already existing date format new prescribed.
+
+
+
+
+how to Write a Excel Sheet
+==============================
+
+Step1: Create object for file and specify the location of the file
+
+Step 2: Create object for the workbook
+
+Step 3: Create a Sheet
+
+Step 4: Create a Row
+
+
+Step 5: Create a cell
+
+
+Step 6: Set the value for the cell
+
+Step 7: Create a object FileOutPutStream to write a file
+
+
+
+
+how to update the data in Excel
+================================
+
+Step 1: To read all the data present in Excel
+
+Step 2: Check whether desired data present in the excel sheet or not
+
+	If data exists replace with new data
+
+	If data doesnt exist read the other datas
+
+
+Step 3: Write the updated data back in the excel sheet
+
+
+To write bulk of data in Excel Sheet
+====================================
+
+Step 1: Get multiple data from user as input
+
+Step 2: Add all the data in the list
+
+Step 3: Iterate and get the data present in the User defined List
+
+Step 4: Enclose the method setCellValue() inside the loop and pass (listref.get(i))
+
+Step 5: Create object for FileOutputStream 
+
+Step 6: Write or update the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
